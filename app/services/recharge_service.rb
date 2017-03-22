@@ -34,7 +34,7 @@ class RechargeService
       credit_account = AccountService.account_review(credit_account_id)
       debit_account = AccountService.account_review(debit_account_id)
       amount = BigDecimal(amount)
-      return false if (credit_account.balance < amount) || (amount > get_credit_amount_with_debit_account_id(credit_account_id, debit_account_id))
+      return false if balance_limited?(credit_account.balance, amount) || amount_greater_than_credited?(amount, get_credit_amount_with_debit_account_id(credit_account_id, debit_account_id))
 
       ActiveRecord::Base.transaction do
         Recharge.create!(
@@ -78,6 +78,16 @@ class RechargeService
       credit_amount = Recharge.where(source_account_id: credit_account_id, dest_account_id: debit_account_id, recharge_type: Recharge::CREDIT).sum(:amount).abs
       repayment_amount = Recharge.where(source_account_id: credit_account_id, dest_account_id: debit_account_id, recharge_type: Recharge::REPAYMENT).sum(:amount).abs
       credit_amount + (-repayment_amount)
+    end
+
+    private
+
+    def balance_limited? balance, amount
+      balance < amount
+    end
+
+    def amount_greater_than_credited? amount, credited
+      amount > credited
     end
 
   end
