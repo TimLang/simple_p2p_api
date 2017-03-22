@@ -1,0 +1,705 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'answers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'articles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'sources'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'topics'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to Recharges (20170321120718)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (43.8ms)[0m  DROP TABLE "recharges"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'answers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'articles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'sources'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'topics'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'answers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'articles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'sources'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'topics'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'answers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'articles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'sources'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'topics'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to Accounts (20170321112504)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "accounts" ("id" serial primary key, "balance" decimal, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20170321112504"]]
+  [1m[36m (15.9ms)[0m  [1mCOMMIT[0m
+Migrating to Recharges (20170321120718)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "recharges" ("id" serial primary key, "source_account_id" integer, "dest_account_id" integer, "recharge_type" character varying, "amount" decimal) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20170321120718"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'accounts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'recharges'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started POST "/accounts" for ::1 at 2017-03-22 21:52:28 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/accounts"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/tim/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/tim/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/tim/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (33.1ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (31.8ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (169.0ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (113.7ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (189.0ms)
+
+
+Started POST "/api/v1/accounts" for ::1 at 2017-03-22 21:52:44 +0800
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"balance"=>"5000"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "accounts" ("balance", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["balance", "5000.0"], ["created_at", "2017-03-22 13:52:44.792218"], ["updated_at", "2017-03-22 13:52:44.792218"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/api/v1/accounts" for ::1 at 2017-03-22 21:52:49 +0800
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"balance"=>"3000"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("balance", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["balance", "3000.0"], ["created_at", "2017-03-22 13:52:49.338657"], ["updated_at", "2017-03-22 13:52:49.338657"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/v1/accounts" for ::1 at 2017-03-22 21:52:54 +0800
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"balance"=>"2000"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("balance", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["balance", "2000.0"], ["created_at", "2017-03-22 13:52:54.012310"], ["updated_at", "2017-03-22 13:52:54.012310"]]
+  [1m[35m (15.7ms)[0m  COMMIT
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 16.1ms)
+
+
+Started POST "/api/v1/recharges/loan" for ::1 at 2017-03-22 21:53:46 +0800
+Processing by Api::V1::RechargesController#loan as */*
+  Parameters: {"debit_account_id"=>"1", "credit_account_id"=>"2", "amount"=>"2000"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAccount Load (0.4ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.6ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "credit"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "repayment"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "debit"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "recover"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 2], ["recharge_type", "credit"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 2], ["recharge_type", "repayment"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 2], ["recharge_type", "debit"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 2], ["recharge_type", "recover"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recharges" ("source_account_id", "dest_account_id", "recharge_type", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"  [["source_account_id", 1], ["dest_account_id", 2], ["recharge_type", "debit"], ["amount", "-2000.0"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recharges" ("source_account_id", "dest_account_id", "recharge_type", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_account_id", 2], ["dest_account_id", 1], ["recharge_type", "credit"], ["amount", "2000.0"]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3  [["balance", "3000.0"], ["updated_at", "2017-03-22 13:53:46.975635"], ["id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3[0m  [["balance", "5000.0"], ["updated_at", "2017-03-22 13:53:46.978058"], ["id", 2]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Completed 200 OK in 54ms (Views: 0.1ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/api/v1/recharges/loan" for ::1 at 2017-03-22 21:54:00 +0800
+Processing by Api::V1::RechargesController#loan as */*
+  Parameters: {"debit_account_id"=>"2", "credit_account_id"=>"1", "amount"=>"1000"}
+  [1m[36mAccount Load (0.4ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccount Load (0.2ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.4ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 2], ["recharge_type", "credit"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 2], ["recharge_type", "repayment"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 2], ["recharge_type", "debit"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 2], ["recharge_type", "recover"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "credit"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "repayment"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "debit"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "recover"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recharges" ("source_account_id", "dest_account_id", "recharge_type", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"  [["source_account_id", 2], ["dest_account_id", 1], ["recharge_type", "debit"], ["amount", "-1000.0"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recharges" ("source_account_id", "dest_account_id", "recharge_type", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_account_id", 1], ["dest_account_id", 2], ["recharge_type", "credit"], ["amount", "1000.0"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3  [["balance", "4000.0"], ["updated_at", "2017-03-22 13:54:00.548162"], ["id", 2]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3[0m  [["balance", "4000.0"], ["updated_at", "2017-03-22 13:54:00.549510"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/api/v1/recharges/repayment" for ::1 at 2017-03-22 21:54:25 +0800
+Processing by Api::V1::RechargesController#repayment as */*
+  Parameters: {"debit_account_id"=>"1", "credit_account_id"=>"2", "amount"=>"500"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAccount Load (0.2ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 2], ["recharge_type", "credit"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 2], ["recharge_type", "repayment"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 2], ["recharge_type", "debit"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 2], ["recharge_type", "recover"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "credit"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "repayment"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "debit"]]
+  [1m[35m (0.5ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "recover"]]
+  [1m[36m (2.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recharges" ("source_account_id", "dest_account_id", "recharge_type", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"  [["source_account_id", 2], ["dest_account_id", 1], ["recharge_type", "repayment"], ["amount", "-500.0"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recharges" ("source_account_id", "dest_account_id", "recharge_type", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_account_id", 1], ["dest_account_id", 2], ["recharge_type", "recover"], ["amount", "500.0"]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3  [["balance", "3500.0"], ["updated_at", "2017-03-22 13:54:25.724643"], ["id", 2]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3[0m  [["balance", "4500.0"], ["updated_at", "2017-03-22 13:54:25.726721"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Completed 200 OK in 24ms (Views: 0.1ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/api/v1/recharges/loan" for ::1 at 2017-03-22 21:54:35 +0800
+Processing by Api::V1::RechargesController#loan as */*
+  Parameters: {"debit_account_id"=>"3", "credit_account_id"=>"1", "amount"=>"1000"}
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mAccount Load (0.2ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 3], ["recharge_type", "credit"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 3], ["recharge_type", "repayment"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 3], ["recharge_type", "debit"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 3], ["recharge_type", "recover"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "credit"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "repayment"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "debit"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "recover"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recharges" ("source_account_id", "dest_account_id", "recharge_type", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"  [["source_account_id", 3], ["dest_account_id", 1], ["recharge_type", "debit"], ["amount", "-1000.0"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recharges" ("source_account_id", "dest_account_id", "recharge_type", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_account_id", 1], ["dest_account_id", 3], ["recharge_type", "credit"], ["amount", "1000.0"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3  [["balance", "1000.0"], ["updated_at", "2017-03-22 13:54:35.284833"], ["id", 3]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3[0m  [["balance", "5500.0"], ["updated_at", "2017-03-22 13:54:35.286158"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/v1/recharges/repayment" for ::1 at 2017-03-22 21:56:30 +0800
+Processing by Api::V1::RechargesController#repayment as */*
+  Parameters: {"debit_account_id"=>"3", "credit_account_id"=>"1", "amount"=>"1500"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mAccount Load (0.2ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "credit"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "repayment"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "debit"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "recover"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 3], ["recharge_type", "credit"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 3], ["recharge_type", "repayment"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 3], ["recharge_type", "debit"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 3], ["recharge_type", "recover"]]
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 4.6ms)
+
+LoadError (dlopen(/Users/tim/.rbenv/versions/2.2.0/lib/ruby/2.2.0/x86_64-darwin13/readline.bundle, 9): Library not loaded: /usr/local/opt/readline/lib/libreadline.6.dylib
+  Referenced from: /Users/tim/.rbenv/versions/2.2.0/lib/ruby/2.2.0/x86_64-darwin13/readline.bundle
+  Reason: image not found - /Users/tim/.rbenv/versions/2.2.0/lib/ruby/2.2.0/x86_64-darwin13/readline.bundle):
+  app/services/recharge_service.rb:37:in `repayment'
+  app/controllers/api/v1/recharges_controller.rb:94:in `block in <class:RechargesController>'
+
+
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.9ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.2ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.2ms)
+
+
+Started POST "/api/v1/recharges/repayment" for ::1 at 2017-03-22 22:00:09 +0800
+Processing by Api::V1::RechargesController#repayment as */*
+  Parameters: {"debit_account_id"=>"3", "credit_account_id"=>"1", "amount"=>"1500"}
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mAccount Load (0.2ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "credit"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "repayment"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "debit"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "recover"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 3], ["recharge_type", "credit"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 3], ["recharge_type", "repayment"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 3], ["recharge_type", "debit"]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 3], ["recharge_type", "recover"]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.5ms)
+
+LoadError (dlopen(/Users/tim/.rbenv/versions/2.2.0/lib/ruby/2.2.0/x86_64-darwin13/readline.bundle, 9): Library not loaded: /usr/local/opt/readline/lib/libreadline.6.dylib
+  Referenced from: /Users/tim/.rbenv/versions/2.2.0/lib/ruby/2.2.0/x86_64-darwin13/readline.bundle
+  Reason: image not found - /Users/tim/.rbenv/versions/2.2.0/lib/ruby/2.2.0/x86_64-darwin13/readline.bundle):
+  app/services/recharge_service.rb:37:in `repayment'
+  app/controllers/api/v1/recharges_controller.rb:94:in `block in <class:RechargesController>'
+
+
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.4ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.4ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tim/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (112.2ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."dest_account_id" = $2 AND "recharges"."recharge_type" = $3[0m  [["source_account_id", 1], ["dest_account_id", 3], ["recharge_type", "credit"]]
+  [1m[35m (0.4ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."dest_account_id" = $2 AND "recharges"."recharge_type" = $3  [["source_account_id", 1], ["dest_account_id", 3], ["recharge_type", "repayment"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."dest_account_id" = $2 AND "recharges"."recharge_type" = $3[0m  [["source_account_id", 1], ["dest_account_id", 3], ["recharge_type", "credit"]]
+  [1m[35m (0.3ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."dest_account_id" = $2 AND "recharges"."recharge_type" = $3  [["source_account_id", 1], ["dest_account_id", 3], ["recharge_type", "repayment"]]
+
+
+Started POST "/api/v1/recharges/repayment" for ::1 at 2017-03-22 22:19:47 +0800
+Processing by Api::V1::RechargesController#repayment as */*
+  Parameters: {"debit_account_id"=>"3", "credit_account_id"=>"1", "amount"=>"1500"}
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mAccount Load (0.2ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "credit"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "repayment"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "debit"]]
+  [1m[36m (2.8ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "recover"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 3], ["recharge_type", "credit"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 3], ["recharge_type", "repayment"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 3], ["recharge_type", "debit"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 3], ["recharge_type", "recover"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."dest_account_id" = $2 AND "recharges"."recharge_type" = $3[0m  [["source_account_id", 1], ["dest_account_id", 3], ["recharge_type", "credit"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."dest_account_id" = $2 AND "recharges"."recharge_type" = $3  [["source_account_id", 1], ["dest_account_id", 3], ["recharge_type", "repayment"]]
+Completed 200 OK in 5291ms (Views: 0.2ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/api/v1/recharges/repayment" for ::1 at 2017-03-22 22:20:01 +0800
+Processing by Api::V1::RechargesController#repayment as */*
+  Parameters: {"debit_account_id"=>"3", "credit_account_id"=>"1", "amount"=>"1500"}
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mAccount Load (0.2ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.3ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "credit"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "repayment"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "debit"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "recover"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 3], ["recharge_type", "credit"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 3], ["recharge_type", "repayment"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 3], ["recharge_type", "debit"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 3], ["recharge_type", "recover"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."dest_account_id" = $2 AND "recharges"."recharge_type" = $3[0m  [["source_account_id", 1], ["dest_account_id", 3], ["recharge_type", "credit"]]
+  [1m[35m (0.4ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."dest_account_id" = $2 AND "recharges"."recharge_type" = $3  [["source_account_id", 1], ["dest_account_id", 3], ["recharge_type", "repayment"]]
+Completed 200 OK in 2763ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/v1/recharges/repayment" for ::1 at 2017-03-22 22:20:12 +0800
+Processing by Api::V1::RechargesController#repayment as */*
+  Parameters: {"debit_account_id"=>"3", "credit_account_id"=>"1", "amount"=>"1000"}
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mAccount Load (0.2ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.3ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "credit"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "repayment"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 1], ["recharge_type", "debit"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 1], ["recharge_type", "recover"]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 3], ["recharge_type", "credit"]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 3], ["recharge_type", "repayment"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2[0m  [["source_account_id", 3], ["recharge_type", "debit"]]
+  [1m[35m (0.8ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."recharge_type" = $2  [["source_account_id", 3], ["recharge_type", "recover"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."dest_account_id" = $2 AND "recharges"."recharge_type" = $3[0m  [["source_account_id", 1], ["dest_account_id", 3], ["recharge_type", "credit"]]
+  [1m[35m (0.3ms)[0m  SELECT SUM("recharges"."amount") FROM "recharges" WHERE "recharges"."source_account_id" = $1 AND "recharges"."dest_account_id" = $2 AND "recharges"."recharge_type" = $3  [["source_account_id", 1], ["dest_account_id", 3], ["recharge_type", "repayment"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recharges" ("source_account_id", "dest_account_id", "recharge_type", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"  [["source_account_id", 1], ["dest_account_id", 3], ["recharge_type", "repayment"], ["amount", "-1000.0"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recharges" ("source_account_id", "dest_account_id", "recharge_type", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_account_id", 3], ["dest_account_id", 1], ["recharge_type", "recover"], ["amount", "1000.0"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3  [["balance", "4500.0"], ["updated_at", "2017-03-22 14:20:15.798302"], ["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3[0m  [["balance", "2000.0"], ["updated_at", "2017-03-22 14:20:15.800388"], ["id", 3]]
+  [1m[35m (14.9ms)[0m  COMMIT
+Completed 200 OK in 3406ms (Views: 0.2ms | ActiveRecord: 20.2ms)

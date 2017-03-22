@@ -1,0 +1,16 @@
+
+default: &default
+  adapter: postgresql
+  pool: 5
+  username: tim
+  password: jxb12345
+  timeout: 5000
+
+development:
+  <<: *default
+  database: p2p_dev
+
+production:
+  <<: *default
+  database: p2p_prod
+
